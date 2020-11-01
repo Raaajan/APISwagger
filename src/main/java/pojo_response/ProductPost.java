@@ -1,4 +1,4 @@
-package pojo;
+package pojo_response;
 
 public class ProductPost {
 
@@ -65,6 +65,26 @@ public class ProductPost {
 		this.shipping = shipping;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	public String getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	private int id;
 	private String name;
 	private String type;
 	private int price;
@@ -75,4 +95,6 @@ public class ProductPost {
 	private String model;
 	private String url;
 	private String image;
+	private String updatedAt;
+	private String createdAt;
 }

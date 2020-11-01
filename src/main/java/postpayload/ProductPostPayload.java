@@ -1,12 +1,12 @@
 package postpayload;
 
-import pojo.ProductPost;
+import pojo_request.ProductPostReq;
 
 public class ProductPostPayload {
 
-	ProductPost pp = new ProductPost();
+	ProductPostReq pp = new ProductPostReq();
 	
-	public ProductPost setProductPostPayload(String name,String type,int price,int shipping,String upc,String description,String manufacturer,String model,String url,String image) {
+	public ProductPostReq setProductPostPayload(String name,String type,int price,int shipping,String upc,String description,String manufacturer,String model,String url,String image) {
 		
 		pp.setName(name);
 		pp.setType(type);

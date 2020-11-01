@@ -1,54 +1,3 @@
-Request method:	POST
-Request URI:	http://localhost:3030/products
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "name": "string",
-    "type": "string",
-    "price": 0,
-    "shipping": 0,
-    "upc": "string",
-    "description": "string",
-    "manufacturer": "string",
-    "model": "string",
-    "url": "string",
-    "image": "string"
-}
-HTTP/1.1 201 Created
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-Allow: GET,POST,PUT,PATCH,DELETE
-Vary: Accept, Accept-Encoding
-Content-Type: application/json; charset=utf-8
-Content-Length: 258
-ETag: W/"102-hdRfwyMClsAXFIw9tRkNWKX+WpE"
-Date: Sun, 01 Nov 2020 10:37:08 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-
-{
-    "id": 9999804,
-    "name": "string",
-    "type": "string",
-    "price": 0,
-    "shipping": 0,
-    "upc": "string",
-    "description": "string",
-    "manufacturer": "string",
-    "model": "string",
-    "url": "string",
-    "image": "string",
-    "updatedAt": "2020-11-01T10:37:08.297Z",
-    "createdAt": "2020-11-01T10:37:08.297Z"
-}
 Request method:	GET
 Request URI:	http://localhost:3030/products
 Proxy:			<none>
@@ -67,15 +16,15 @@ Access-Control-Allow-Origin: *
 Allow: GET,POST,PUT,PATCH,DELETE
 Vary: Accept, Accept-Encoding
 Content-Type: application/json; charset=utf-8
-ETag: W/"2caa-FQ4Ji9ySv+Mkl5FIDy0Vch2/2j8"
+ETag: W/"2caa-yMRjEwkZ//k/y+M6SnCEfmUQZKU"
 Content-Encoding: gzip
-Date: Sun, 01 Nov 2020 10:37:08 GMT
+Date: Sun, 01 Nov 2020 16:29:56 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 Transfer-Encoding: chunked
 
 {
-    "total": 52083,
+    "total": 52091,
     "limit": 10,
     "skip": 0,
     "data": [

@@ -13,6 +13,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 
@@ -49,9 +50,9 @@ public class Helper{
 		return prop.getProperty(key);
 	}
 	
-	public String getJsonPathValue(String resp, String Jkey) {
-	
-		JsonPath json = new JsonPath(resp);
+	public String getJsonPathValue(Response resp, String Jkey) {
+		
+		JsonPath json = new JsonPath(resp.asString());
 		return json.getString(Jkey);
 		
 	}

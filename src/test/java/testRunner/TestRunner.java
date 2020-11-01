@@ -10,7 +10,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features="D:\\Automation\\Eclipse\\apiFramework\\src\\test\\resources\\products.feature",
 		glue= {"stepdefinition"},
-		plugin = {"json:target\\jsonReports\\executionReport.json"}
+		plugin = {"json:target\\jsonReports\\executionReport.json"},
+		tags= "@GET" 
 		)
 public class TestRunner  {
 	
