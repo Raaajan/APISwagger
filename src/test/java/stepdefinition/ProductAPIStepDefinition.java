@@ -64,6 +64,8 @@ public void verify_code_and_response_body(int Astatuscode) {
 		
 	int Estatuscode = res.getStatusCode();
 	assertEquals(Astatuscode, Estatuscode);
+	
+	
 	    
 	}
 	

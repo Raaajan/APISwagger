@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-11-01T09:32:19.964Z",
+        "start_timestamp": "2020-11-01T10:37:06.178Z",
         "line": 9,
         "name": "swagger product post",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 601000000,
+              "duration": 624000000,
               "status": "passed"
             },
             "line": 3,
@@ -79,7 +79,7 @@
           },
           {
             "result": {
-              "duration": 1791000000,
+              "duration": 1618000000,
               "status": "passed"
             },
             "line": 5,
@@ -101,7 +101,7 @@
           },
           {
             "result": {
-              "duration": 3000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 6,
@@ -110,6 +110,67 @@
               "arguments": [
                 {
                   "val": "201",
+                  "offset": 7
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.verify_code_and_response_body(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-01T10:37:08.548Z",
+        "line": 17,
+        "name": "swagger product get",
+        "description": "",
+        "id": "api-automation-for-swagger-product;swagger-product-get;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user has URI",
+            "match": {
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_URI()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 330000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user trigger \"GET\" with \"getProductURI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GET\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"getProductURI\"",
+                  "offset": 24
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_trigger(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "verify 200 code and response body",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
                   "offset": 7
                 }
               ],
