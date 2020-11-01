@@ -1,5 +1,6 @@
 package utility;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,29 +12,33 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
 
 
 
 public class Helper{
-	RequestSpecification req;
-	public RequestSpecification requestSpecification() throws FileNotFoundException {
+	public static RequestSpecification req;
+	public RequestSpecification requestSpecification() throws IOException {
 		
-		
+		if(req==null) {
 	
 		PrintStream logger = new PrintStream(new FileOutputStream("logger.txt"));
-		req = new RequestSpecBuilder().setContentType(ContentType.JSON)
+		req = new RequestSpecBuilder().setContentType(ContentType.JSON).setBaseUri(getValuefromPropertiesFile("baseuri"))
 		.addFilter(RequestLoggingFilter.logRequestTo(logger))
 		.addFilter(ResponseLoggingFilter.logResponseTo(logger))
 		.build();
 		
 		return req;
+		}
+		return req;
 	}
 	
 
-	public Properties loadPropertiesFile(String file) throws IOException {
+	public String getValuefromPropertiesFile(String key) throws IOException {
 		FileInputStream fis = null;
 		try {
+			 File file = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\Config.properties");
 			fis = new FileInputStream(file);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -41,7 +46,13 @@ public class Helper{
 		Properties prop = new Properties();
 		prop.load(fis);
 		
-		return prop;
+		return prop.getProperty(key);
 	}
 	
+	public String getJsonPathValue(String resp, String Jkey) {
+	
+		JsonPath json = new JsonPath(resp);
+		return json.getString(Jkey);
+		
+	}
 }

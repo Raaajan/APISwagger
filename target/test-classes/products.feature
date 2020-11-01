@@ -1,8 +1,17 @@
 Feature: API automation for swagger product
 Scenario Outline: swagger product post
 Given user has URI
-When user trigger "request"
-Then user get response code and response body
+And user has payload "<name>","<type>",<price>,<shipping>,"<upc>","<description>","<manufacturer>","<model>","<url>","<image>"
+When user trigger "<request>" with "<resources>"
+Then verify <statuscode> code and response body
 Examples:
-|request|
-|post|
+|request|resources			|statuscode	|name		|type		|price|shipping	|upc		|description|manufacturer	|model	|url		|image	|
+|POST		|postProductURI	|201				|string	|string	|0		|0				|string	|string			|string				|string	|string	|string	|
+
+Scenario Outline: swagger product get
+Given user has URI
+When user trigger "<request>" with "<resources>"
+Then verify <statuscode> code and response body
+Examples:
+|request|resources			|statuscode	|
+|GET		|getProductURI	|200				|

@@ -1,0 +1,130 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-11-01T09:32:19.964Z",
+        "line": 9,
+        "name": "swagger product post",
+        "description": "",
+        "id": "api-automation-for-swagger-product;swagger-product-post;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 601000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user has URI",
+            "match": {
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_URI()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user has payload \"string\",\"string\",0,0,\"string\",\"string\",\"string\",\"string\",\"string\",\"string\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"string\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 26
+                },
+                {
+                  "val": "0",
+                  "offset": 35
+                },
+                {
+                  "val": "0",
+                  "offset": 37
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 39
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 48
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 57
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 66
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 75
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 84
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_payload(java.lang.String,java.lang.String,int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1791000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user trigger \"POST\" with \"postProductURI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"POST\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"postProductURI\"",
+                  "offset": 25
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_trigger(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "verify 201 code and response body",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 7
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.verify_code_and_response_body(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "API automation for swagger product",
+    "description": "",
+    "id": "api-automation-for-swagger-product",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/products.feature",
+    "tags": []
+  }
+]

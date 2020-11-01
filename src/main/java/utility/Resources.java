@@ -2,8 +2,8 @@ package utility;
 
 public enum Resources {
 
-	postProductURI("products"),
-	getProductURI("products");		
+	postProductURI("/products"),
+	getProductURI("/products");		
 	
 	private String resource;
 	

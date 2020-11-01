@@ -1,0 +1,51 @@
+Request method:	POST
+Request URI:	http://localhost:3030/products
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "string",
+    "type": "string",
+    "price": 0,
+    "shipping": 0,
+    "upc": "string",
+    "description": "string",
+    "manufacturer": "string",
+    "model": "string",
+    "url": "string",
+    "image": "string"
+}
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Allow: GET,POST,PUT,PATCH,DELETE
+Vary: Accept, Accept-Encoding
+Content-Type: application/json; charset=utf-8
+Content-Length: 258
+ETag: W/"102-EmJDe2tqvj3ovJaDMpLCh9zXsYs"
+Date: Sun, 01 Nov 2020 09:32:22 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{
+    "id": 9999801,
+    "name": "string",
+    "type": "string",
+    "price": 0,
+    "shipping": 0,
+    "upc": "string",
+    "description": "string",
+    "manufacturer": "string",
+    "model": "string",
+    "url": "string",
+    "image": "string",
+    "updatedAt": "2020-11-01T09:32:22.271Z",
+    "createdAt": "2020-11-01T09:32:22.271Z"
+}
