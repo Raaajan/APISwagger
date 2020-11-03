@@ -18,6 +18,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import junit.framework.Assert;
 import pojo_request.ProductPostReq;
 import pojo_response.ProductGet;
 import pojo_response.ProductPost;
@@ -61,17 +62,30 @@ public void user_trigger(String requesttype,String resources) {
 			.then().log().all().spec(resspec).extract().response();
 		}
 	}
-/*
-@Then("verify {int} code and response body")
-public void verify_code_and_response_body(int Astatuscode) {*/
+
+@When("user trigger {string} with {string} for {string}")
+public void user_trigger_with_for(String requesttype, String resources, String id) {
+	
+	Resources resource = Resources.valueOf(resources);
+	String resourceval = resource.getResource();
+	
+	if(requesttype.equalsIgnoreCase("DELETE")) {
+		res	= given().log().all().spec(reqspec).pathParam("id", id).when().delete(resourceval+"/{id}")
+				.then().log().all().spec(resspec).extract().response();
+	}
+	else if(requesttype.equalsIgnoreCase("PATCH")) {
+		res	= given().log().all().spec(reqspec).body(propostPay).pathParam("id", id).when().patch(resourceval+"/{id}")
+				.then().log().all().spec(resspec).extract().response();
+	}
+}
 
 @Then("verify {int} code and response body for {string}")
-public void verify_code_and_response_body_for(int Astatuscode, String requesttype) {
+public void verify_code_and_response_body_for(int Estatuscode, String requesttype) {
 		
-	int Estatuscode = res.getStatusCode();
-	assertEquals(Astatuscode, Estatuscode);
-	
-	if(requesttype.equalsIgnoreCase("POST")) {
+	int Astatuscode = res.getStatusCode();
+	System.out.println("Response Status Code : "+Astatuscode);
+	assertEquals(Estatuscode, Astatuscode);
+	if(requesttype.equalsIgnoreCase("POST")||requesttype.equalsIgnoreCase("DELETE")||requesttype.equalsIgnoreCase("PATCH")) {
 		System.out.println("**********POST RESPONSE************");
 		ProductPost postRes = res.as(ProductPost.class);
 		

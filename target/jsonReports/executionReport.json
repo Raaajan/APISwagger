@@ -3,8 +3,8 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-11-01T16:29:54.011Z",
-        "line": 19,
+        "start_timestamp": "2020-11-03T21:00:50.451Z",
+        "line": 38,
         "name": "swagger product get",
         "description": "",
         "id": "api-automation-for-swagger-product;swagger-product-get;;2",
@@ -13,10 +13,10 @@
         "steps": [
           {
             "result": {
-              "duration": 651000000,
+              "duration": 896000000,
               "status": "passed"
             },
-            "line": 14,
+            "line": 32,
             "name": "user has URI",
             "match": {
               "location": "stepdefinition.ProductAPIStepDefinition.user_has_URI()"
@@ -25,33 +25,91 @@
           },
           {
             "result": {
-              "duration": 1698000000,
+              "duration": 8000000,
               "status": "passed"
             },
-            "line": 15,
-            "name": "user trigger \"GET\" with \"getProductURI\"",
+            "line": 33,
+            "name": "user has payload \"Dubey\",\"Rajan\",0,0,\"string\",\"string\",\"string\",\"string\",\"string\",\"string\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"GET\"",
+                  "val": "\"Dubey\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"Rajan\"",
+                  "offset": 25
+                },
+                {
+                  "val": "0",
+                  "offset": 33
+                },
+                {
+                  "val": "0",
+                  "offset": 35
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 37
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 55
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 64
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 73
+                },
+                {
+                  "val": "\"string\"",
+                  "offset": 82
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_payload(java.lang.String,java.lang.String,int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1977000000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "user trigger \"PATCH\" with \"patchProductURI\" for \"9999832\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PATCH\"",
                   "offset": 13
                 },
                 {
-                  "val": "\"getProductURI\"",
-                  "offset": 24
+                  "val": "\"patchProductURI\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"9999832\"",
+                  "offset": 48
                 }
               ],
-              "location": "stepdefinition.ProductAPIStepDefinition.user_trigger(java.lang.String,java.lang.String)"
+              "location": "stepdefinition.ProductAPIStepDefinition.user_trigger_with_for(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 478000000,
+              "duration": 61000000,
               "status": "passed"
             },
-            "line": 16,
-            "name": "verify 200 code and response body for \"GET\"",
+            "line": 35,
+            "name": "verify 200 code and response body for \"PATCH\"",
             "match": {
               "arguments": [
                 {
@@ -59,7 +117,7 @@
                   "offset": 7
                 },
                 {
-                  "val": "\"GET\"",
+                  "val": "\"PATCH\"",
                   "offset": 38
                 }
               ],
@@ -70,7 +128,7 @@
         ],
         "tags": [
           {
-            "name": "@GET"
+            "name": "@PATCH"
           }
         ]
       }
