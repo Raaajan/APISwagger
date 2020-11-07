@@ -4,6 +4,8 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 
 import io.cucumber.java.en.And;
@@ -23,6 +25,7 @@ import pojo_request.ProductPostReq;
 import pojo_response.ProductGet;
 import pojo_response.ProductPost;
 import postpayload.ProductPostPayload;
+import utility.ExcelReader;
 import utility.Helper;
 import utility.Resources;
 
@@ -80,22 +83,42 @@ public void user_trigger_with_for(String requesttype, String resources, String i
 }
 
 @Then("verify {int} code and response body for {string}")
-public void verify_code_and_response_body_for(int Estatuscode, String requesttype) {
-		
+public void verify_code_and_response_body_for(int Estatuscode, String requesttype) throws IOException {
+	
+	ExcelReader er = new ExcelReader();
+	
 	int Astatuscode = res.getStatusCode();
 	System.out.println("Response Status Code : "+Astatuscode);
 	assertEquals(Estatuscode, Astatuscode);
 	if(requesttype.equalsIgnoreCase("POST")||requesttype.equalsIgnoreCase("DELETE")||requesttype.equalsIgnoreCase("PATCH")) {
-		System.out.println("**********POST RESPONSE************");
+		System.out.println("**********POST/PATCH RESPONSE************");
+		List<HashMap<String, String>> postprorespayload = er.getListMap("PostProductResponsePayload");
 		ProductPost postRes = res.as(ProductPost.class);
 		
-		System.out.println(postRes.getId());
-		System.out.println(postRes.getName());
-		System.out.println(postRes.getPrice());
+		String Atype = postRes.getType();
+		String Aname = postRes.getName();
+		int Aprice = postRes.getPrice();
+		
+		System.out.println("Atype : "+Atype);
+		System.out.println("Aname : "+Aname);
+		System.out.println("Aprice : "+Aprice);
+		
+		String Etype =postprorespayload.get(0).get("type");
+		String Ename = postprorespayload.get(0).get("name");
+		String price =postprorespayload.get(0).get("price");
+		int Eprice = Integer.parseInt(price);
+		System.out.println("Etype : "+Etype);
+		System.out.println("Ename : "+Ename);
+		System.out.println("Eprice : "+Eprice);
+		
+		assertEquals(Etype, Atype);
+		assertEquals(Ename, Aname);
+		assertEquals(Aprice, Eprice);
 	}
 	
 	if(requesttype.equalsIgnoreCase("GET")) {
-	System.out.println("*************GET RESPONSE**************");	
+	System.out.println("*************GET RESPONSE**************");
+	List<HashMap<String, String>> getprorespayload = er.getListMap("GetProductResponsePayload");
 	ProductGet getRes = res.as(ProductGet.class);
 	
 	 System.out.println(getRes.getTotal());
@@ -105,7 +128,23 @@ public void verify_code_and_response_body_for(int Estatuscode, String requesttyp
 	 System.out.println(getRes.getData().get(0).getCategories().get(0).getId());
 	 System.out.println(getRes.getData().get(5).getId());
 	 System.out.println(getRes.getData().get(5).getName());
-	 System.out.println(getRes.getData().get(5).getCategories().get(0).getId());
+	 System.out.println(getRes.getData().get(5).getCategories().get(0).getName());
+	 
+	 System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+	 System.out.println(getprorespayload.get(0).get("id"));
+	 System.out.println(getprorespayload.get(0).get("name"));
+	 System.out.println(getprorespayload.get(0).get("categories/0/id"));
+	 System.out.println(getprorespayload.get(5).get("id"));
+	 System.out.println(getprorespayload.get(5).get("name"));
+	 System.out.println(getprorespayload.get(5).get("categories/0/name"));
+	 
+	 assertEquals(getprorespayload.get(0).get("id"),getRes.getData().get(0).getId());
+	 assertEquals(getprorespayload.get(0).get("name"),getRes.getData().get(0).getName());
+	 assertEquals(getprorespayload.get(0).get("categories/0/id"),getRes.getData().get(0).getCategories().get(0).getId());
+	 assertEquals(getprorespayload.get(5).get("id"),getRes.getData().get(5).getId());
+	 assertEquals(getprorespayload.get(5).get("name"),getRes.getData().get(5).getName());
+	 assertEquals(getprorespayload.get(5).get("categories/0/name"),getRes.getData().get(5).getCategories().get(0).getName());
+	
 	}
 	    
 	}

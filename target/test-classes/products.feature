@@ -6,8 +6,8 @@ And user has payload "<name>","<type>",<price>,<shipping>,"<upc>","<description>
 When user trigger "<request>" with "<resources>"
 Then verify <statuscode> code and response body for "<request>"
 Examples:
-|request|resources			|statuscode	|name		|type		|price|shipping	|upc		|description|manufacturer	|model	|url		|image	|
-|POST		|postProductURI	|201				|string	|string	|0		|0				|string	|string			|string				|string	|string	|string	|
+|request|resources			|statuscode	|name		|type		|price|shipping	|upc		|description|manufacturer	|model	|url						|image	|
+|POST		|postProductURI	|201				|honor	|mobile	|15000|50				|NA			|handset		|Huwaii				|XXYX		|www.horonr.com	|NA	|
 
 @GET
 Scenario Outline: swagger product get

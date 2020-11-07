@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		features="D:\\Automation\\Eclipse\\apiFramework\\src\\test\\resources\\products.feature",
 		glue= {"stepdefinition"},
 		plugin = {"json:target\\jsonReports\\executionReport.json"},
-		tags= "@PATCH" 
+		tags= "@GET" 
 		)
 public class TestRunner  {
 	
