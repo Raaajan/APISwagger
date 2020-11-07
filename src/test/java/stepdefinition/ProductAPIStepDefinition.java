@@ -35,6 +35,7 @@ public class ProductAPIStepDefinition extends Helper{
 	Response res;
 	RequestSpecification reqspec;
 	ResponseSpecification resspec;
+	static int count=0;
 
 @Given("user has URI")
 public void user_has_URI() throws IOException {
@@ -94,7 +95,7 @@ public void verify_code_and_response_body_for(int Estatuscode, String requesttyp
 		System.out.println("**********POST/PATCH RESPONSE************");
 		List<HashMap<String, String>> postprorespayload = er.getListMap("PostProductResponsePayload");
 		ProductPost postRes = res.as(ProductPost.class);
-		
+		System.out.println("count "+count);
 		String Atype = postRes.getType();
 		String Aname = postRes.getName();
 		int Aprice = postRes.getPrice();
@@ -103,17 +104,20 @@ public void verify_code_and_response_body_for(int Estatuscode, String requesttyp
 		System.out.println("Aname : "+Aname);
 		System.out.println("Aprice : "+Aprice);
 		
-		String Etype =postprorespayload.get(0).get("type");
-		String Ename = postprorespayload.get(0).get("name");
-		String price =postprorespayload.get(0).get("price");
-		int Eprice = Integer.parseInt(price);
-		System.out.println("Etype : "+Etype);
-		System.out.println("Ename : "+Ename);
-		System.out.println("Eprice : "+Eprice);
+			String Etype =postprorespayload.get(count).get("type");
+			String Ename = postprorespayload.get(count).get("name");
+			String price =postprorespayload.get(count).get("price");
+			int Eprice = Integer.parseInt(price);
+			System.out.println("Etype : "+Etype);
+			System.out.println("Ename : "+Ename);
+			System.out.println("Eprice : "+Eprice);
+			
+			assertEquals(Etype, Atype);
+			assertEquals(Ename, Aname);
+			assertEquals(Aprice, Eprice);
 		
-		assertEquals(Etype, Atype);
-		assertEquals(Ename, Aname);
-		assertEquals(Aprice, Eprice);
+		count++;
+	
 	}
 	
 	if(requesttype.equalsIgnoreCase("GET")) {

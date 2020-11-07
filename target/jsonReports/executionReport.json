@@ -3,20 +3,20 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-11-07T13:24:40.251Z",
-        "line": 19,
-        "name": "swagger product get",
+        "start_timestamp": "2020-11-07T16:02:39.047Z",
+        "line": 10,
+        "name": "swagger product post",
         "description": "",
-        "id": "api-automation-for-swagger-product;swagger-product-get;;2",
+        "id": "api-automation-for-swagger-product;swagger-product-post;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 588000000,
+              "duration": 692000000,
               "status": "passed"
             },
-            "line": 14,
+            "line": 4,
             "name": "user has URI",
             "match": {
               "location": "stepdefinition.ProductAPIStepDefinition.user_has_URI()"
@@ -25,20 +25,74 @@
           },
           {
             "result": {
-              "duration": 1699000000,
+              "duration": 3000000,
               "status": "passed"
             },
-            "line": 15,
-            "name": "user trigger \"GET\" with \"getProductURI\"",
+            "line": 5,
+            "name": "user has payload \"honor\",\"mobile\",15000,50,\"NA\",\"handset\",\"Huwaii\",\"XXYX\",\"www.horonr.com\",\"NA\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"GET\"",
+                  "val": "\"honor\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"mobile\"",
+                  "offset": 25
+                },
+                {
+                  "val": "15000",
+                  "offset": 34
+                },
+                {
+                  "val": "50",
+                  "offset": 40
+                },
+                {
+                  "val": "\"NA\"",
+                  "offset": 43
+                },
+                {
+                  "val": "\"handset\"",
+                  "offset": 48
+                },
+                {
+                  "val": "\"Huwaii\"",
+                  "offset": 58
+                },
+                {
+                  "val": "\"XXYX\"",
+                  "offset": 67
+                },
+                {
+                  "val": "\"www.horonr.com\"",
+                  "offset": 74
+                },
+                {
+                  "val": "\"NA\"",
+                  "offset": 91
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_payload(java.lang.String,java.lang.String,int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1818000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user trigger \"POST\" with \"postProductURI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"POST\"",
                   "offset": 13
                 },
                 {
-                  "val": "\"getProductURI\"",
-                  "offset": 24
+                  "val": "\"postProductURI\"",
+                  "offset": 25
                 }
               ],
               "location": "stepdefinition.ProductAPIStepDefinition.user_trigger(java.lang.String,java.lang.String)"
@@ -47,19 +101,19 @@
           },
           {
             "result": {
-              "duration": 1380000000,
+              "duration": 774000000,
               "status": "passed"
             },
-            "line": 16,
-            "name": "verify 200 code and response body for \"GET\"",
+            "line": 7,
+            "name": "verify 201 code and response body for \"POST\"",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
+                  "val": "201",
                   "offset": 7
                 },
                 {
-                  "val": "\"GET\"",
+                  "val": "\"POST\"",
                   "offset": 38
                 }
               ],
@@ -70,7 +124,131 @@
         ],
         "tags": [
           {
-            "name": "@GET"
+            "name": "@POST"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-11-07T16:02:42.415Z",
+        "line": 11,
+        "name": "swagger product post",
+        "description": "",
+        "id": "api-automation-for-swagger-product;swagger-product-post;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user has URI",
+            "match": {
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_URI()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user has payload \"Samsung\",\"mobile\",25000,50,\"NA\",\"headphone\",\"India\",\"SAMS\",\"www.samsung.com\",\"NA\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"mobile\"",
+                  "offset": 27
+                },
+                {
+                  "val": "25000",
+                  "offset": 36
+                },
+                {
+                  "val": "50",
+                  "offset": 42
+                },
+                {
+                  "val": "\"NA\"",
+                  "offset": 45
+                },
+                {
+                  "val": "\"headphone\"",
+                  "offset": 50
+                },
+                {
+                  "val": "\"India\"",
+                  "offset": 62
+                },
+                {
+                  "val": "\"SAMS\"",
+                  "offset": 70
+                },
+                {
+                  "val": "\"www.samsung.com\"",
+                  "offset": 77
+                },
+                {
+                  "val": "\"NA\"",
+                  "offset": 95
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_has_payload(java.lang.String,java.lang.String,int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 221000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user trigger \"POST\" with \"postProductURI\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"POST\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"postProductURI\"",
+                  "offset": 25
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.user_trigger(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 169000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify 201 code and response body for \"POST\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 7
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 38
+                }
+              ],
+              "location": "stepdefinition.ProductAPIStepDefinition.verify_code_and_response_body_for(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@POST"
           }
         ]
       }

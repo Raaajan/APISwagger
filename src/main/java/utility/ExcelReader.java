@@ -12,7 +12,7 @@ public class ExcelReader {
 	
 	public List<HashMap<String, String>> getListMap(String sheetname) throws IOException {
 		
-		FileInputStream fi = new FileInputStream("D:\\Automation\\Eclipse\\ExcelData\\SwggerAPI.xlsx");
+		FileInputStream fi = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\datasheet\\SwggerAPI.xlsx");
 		XSSFWorkbook w = new XSSFWorkbook(fi);
 		XSSFSheet s = w.getSheet(sheetname);
 		int lastrow = s.getLastRowNum();		
